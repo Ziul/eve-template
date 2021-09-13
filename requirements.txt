@@ -1,0 +1,12 @@
+Eve
+eve-healthcheck
+python-dotenv
+dnspython
+flask_bcrypt
+flask-compress
+flask_jwt_extended==3.25.0
+geopy
+pyyaml
+eve-swagger
+bb-flask-monitor
+prometheus-flask-exporter
