@@ -4,6 +4,7 @@ python-dotenv
 dnspython
 flask_bcrypt
 flask-compress
+flask_cors
 flask_jwt_extended==3.25.0
 geopy
 pyyaml

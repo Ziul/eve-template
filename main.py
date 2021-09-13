@@ -6,9 +6,17 @@ from flask import jsonify
 from flask_jwt_extended import JWTManager
 from auth import JWTAuth, auth
 import settings
+from flask_cors import CORS
+from flask_compress import Compress
 
-# app = Eve('api', auth=JWTAuth, media=settings.MEDIA_STORAGE)
-app = Eve('api', media=settings.MEDIA_STORAGE)
+if settings.USE_AUTH:
+    app = Eve('api', auth=JWTAuth, media=settings.MEDIA_STORAGE)
+else:
+    app = Eve('api', media=settings.MEDIA_STORAGE)
+
+CORS(app)
+Compress(app)
+
 
 # DEBUG must be off or DEBUG_METRICS on
 metrics = PrometheusMetrics(

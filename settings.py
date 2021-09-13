@@ -13,6 +13,7 @@ except EnvironmentError as env_error:
 
 # App Settings
 APP_VERSION = '1.0.0'
+USE_AUTH = bool(environ.get("USE_AUTH", False))
 
 # Mongo config
 MONGO_URI = environ.get("MONGO_HOST", environ.get("MONGO_URI", 'localhost'))

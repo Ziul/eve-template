@@ -6,10 +6,11 @@ WORKDIR /app
 RUN apt-get update -qq && apt-get install -yqq \
     git \
     && rm -rf /var/lib/apt/lists
+RUN pip install gunicorn
 RUN pip install -r requirements.txt
 ADD . /app
 ENV WORKERS=2
-ENV PORT=8000
+ENV PORT=5000
 
 EXPOSE $PORT
 CMD gunicorn -b :$PORT -w $WORKERS wsgi --log-level info
