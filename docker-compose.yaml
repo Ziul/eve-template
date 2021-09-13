@@ -1,0 +1,10 @@
+services:
+  api:
+    image: ziuloliveira/eve-template
+    environment:
+      MONGO_URI: "mongodb://mongo"
+    ports:
+      - 5000:5000
+
+  mongo:
+    image: mongo
