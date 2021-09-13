@@ -16,7 +16,7 @@ APP_VERSION = '1.0.0'
 USE_AUTH = bool(environ.get("USE_AUTH", False))
 
 # Mongo config
-MONGO_URI = environ.get("MONGO_HOST", environ.get("MONGO_URI", 'localhost'))
+MONGO_URI = environ.get("MONGO_HOST", environ.get("MONGO_URI", 'mongodb://localhost'))
 MONGO_DBNAME = environ.get("MONGO_DBNAME", 'example')
 PORT = environ.get("PORT", 5000)
 SECRET_KEY = uuid4().hex
